@@ -8,8 +8,23 @@
 
 html {
   font-size: 62.5%;
+  @include responsive(tap-land) {
+    font-size: 56.25%;
+  }
+
+  @include responsive(tap-port) {
+    font-size: 50%;
+  }
+
+  @include responsive(bigDesktop) {
+    font-size: 75%;
+  }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+  @include responsive(tap-port) {
+    padding: 0;
+  }
 }

@@ -10,6 +10,19 @@
   position: relative;
   & > * {
     transform: skewX(12deg);
+    @include responsive(phone) {
+      transform: skewX(0);
+    }
+  }
+
+  @include responsive(tap-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include responsive(phone) {
+    transform: skewX(0);
   }
 
   &__shape {
@@ -21,6 +34,9 @@
     -webket-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
+    @include responsive(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__image {

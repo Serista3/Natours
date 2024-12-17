@@ -1,9 +1,17 @@
 .row {
   max-width: $grid-width;
   //   width: $grid-width;
+  @include responsive(tap-port) {
+    max-width: 60rem;
+    padding: 0 3rem;
+  }
+
   margin: 0 auto;
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+    @include responsive(tap-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
   @include clearfix;
@@ -11,6 +19,14 @@
     float: left;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+    }
+
+    @include responsive(tap-port) {
+      width: 100% !important;
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
     }
   }
 
